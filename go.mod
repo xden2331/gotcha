@@ -1,4 +1,4 @@
-module xden2331/gotcha
+module github.com/xden2331/gotcha
 
 go 1.13
 

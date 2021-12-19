@@ -3,12 +3,12 @@ package gotcha
 import (
 	"context"
 	"fmt"
+	"github.com/xden2331/gotcha/cacher"
+	"github.com/xden2331/gotcha/encoderDecoder"
 	"os"
 	"reflect"
 	"testing"
 	"time"
-	"xden2331/gotcha/cacher"
-	"xden2331/gotcha/encoderDecoder"
 )
 
 func toIntPtr(val int) *int {
@@ -62,6 +62,7 @@ func resetRepo() {
 			fmt.Printf("evicted: [key:%s, val:%s]\n", k, v)
 	})). // cache
 		WithEncoderDecoder(encoderDecoder.NewEncoderDecoder(encoderDecoder.EncoderDecoderType_OfficialJSON)). // encoder decoder
+		WithStrategy(CacheThenSource).
 		Build()
 }
 

@@ -3,9 +3,9 @@ package gotcha
 import (
 	"context"
 	"errors"
+	"github.com/xden2331/gotcha/cacher"
+	"github.com/xden2331/gotcha/encoderDecoder"
 	"time"
-	"xden2331/gotcha/cacher"
-	"xden2331/gotcha/encoderDecoder"
 )
 
 type IGotcha interface{
