@@ -94,7 +94,7 @@ func (g *gotcha) Get(ctx context.Context, toFind, placeholder, extra interface{}
 
 type DefaultBuilder gotcha
 
-func NewDefaultGotcha(keyFunc getKeyFn, loadFunc loadFn) IGotcha {
+func NewDefaultGotcha(keyFunc GetKeyFn, loadFunc LoadFn) IGotcha {
 	return &gotcha{
 		Load:       Load{keyFunc, loadFunc},
 		GotchaName: "",
@@ -107,7 +107,7 @@ func NewDefaultGotcha(keyFunc getKeyFn, loadFunc loadFn) IGotcha {
 /**
 NewGotchaBuilder
 */
-func NewGotchaBuilder(keyFunc getKeyFn, loadFunc loadFn) DefaultBuilder {
+func NewGotchaBuilder(keyFunc GetKeyFn, loadFunc LoadFn) DefaultBuilder {
 	return DefaultBuilder(
 		gotcha{
 			Load:       Load{keyFunc, loadFunc},
